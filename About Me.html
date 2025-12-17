@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Me - Zahrina's Website</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --box-bg:#fce4ec;
+  --pink:#d81b60;
+  --text-soft:rgba(0,0,0,0.7);
+}
+
+@keyframes fadeUp {0%{opacity:0;transform:translateY(18px);}100%{opacity:1;transform:translateY(0);}}
+.fade{opacity:0; animation:fadeUp 1s ease-out forwards;}
+.delay1{animation-delay:0.2s;}
+.delay2{animation-delay:0.4s;}
+.delay3{animation-delay:0.6s;}
+.delay4{animation-delay:0.8s;}
+.delay5{animation-delay:1s;}
+.delay6{animation-delay:1.2s;}
+.delay7{animation-delay:1.4s;}
+
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:url("Pink.jfif") center/cover fixed;
+  color:white;
+}
+
+/* NAVIGATION */
+.topbar{
+  position:fixed;
+  top:0; left:0; right:0;
+  background:rgba(216, 27, 96, 0.85);
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+}
+
+.logo{
+  font-family:"Playfair Display",serif;
+  font-weight:700;
+  letter-spacing:2px;
+  color:white;
+}
+
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{color:rgba(255,255,255,0.8);}
+
+/* CONTENT */
+.about-section{
+  padding:160px 20px 60px;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* ABOUT BOX */
+.about-box, .fav-box{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,.4);
+  color:black;
+}
+
+/* CLOCK */
+.clock-box{
+  background:var(--box-bg);
+  text-align:center;
+  padding:15px;
+}
+
+#clock{
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+  font-weight:700;
+  color:var(--pink);
+}
+
+#date{font-size:14px;}
+
+/* ABOUT */
+.about-img{
+  height:330px;
+  background:url("Me.jpg") center/cover;
+}
+
+.info-box{
+  padding:28px;
+}
+
+.info-box h1{
+  margin-top:0;
+  font-family:"Playfair Display",serif;
+}
+
+/* FAV BOX */
+.fav-box{
+  padding:28px;
+  background:var(--box-bg);
+}
+
+.fav-box h2{
+  font-family:"Playfair Display",serif;
+  color:var(--pink);
+  margin-top:0;
+}
+
+/* MOVIE CARDS */
+.movie-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.movie-card{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+  transition:.3s;
+}
+
+.movie-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,.35);
+}
+
+.movie-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.movie-content{
+  padding:15px;
+}
+
+.movie-content h3{
+  margin:0 0 8px;
+  font-family:"Playfair Display",serif;
+  color:var(--pink);
+}
+
+.movie-content p{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* SONGS */
+.song{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  margin-top:15px;
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+
+audio{
+  width:100%;
+  accent-color:var(--pink);
+}
+
+/* LIST */
+ol{
+  padding-left:20px;
+}
+
+ol li{
+  margin-bottom:8px;
+}
+
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:black;
+  font-size:14px;
+  font-family:'Poppins', sans-serif;
+}
+
+@media(max-width:768px){
+  .about-img{height:250px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<div class="topbar fade delay1">
+  <div class="logo">ZAHRINA'S WEBSITE</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About Me.html">About Me</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+</div>
+
+<section class="about-section">
+
+  <!-- ABOUT ME -->
+  <div class="about-box fade delay2">
+    <div class="clock-box">
+      <div id="clock"></div>
+      <div id="date"></div>
+    </div>
+
+    <div class="about-img"></div>
+
+    <div class="info-box">
+      <h1>About Me</h1>
+      <p>
+        Greetings! I am Siti Zahrina Binti Zaininizar. 
+	I am 20 years old and from Muar, Johor. 
+	I have three siblings and I am the second child. 
+	As a final year Information Management student, 
+	I have developed expertise in records management, 
+	library science and information systems. 
+	I am currently pursuing a diploma in Information 
+	Management at UiTM Segamat, Johor.
+      </p>
+    </div>
+  </div>
+
+  <!-- MY SKILLS -->
+  <div class="fav-box fade delay3">
+    <h2>My Skills</h2>
+    <ol>
+      <li>Record management</li>
+      <li>Information organization</li>
+      <li>Basic computer skills</li>
+      <li>Library Management</li>
+    </ol>
+  </div>
+
+  <!-- MY FAVOURITE MOVIE -->
+  <div class="fav-box fade delay4">
+    <h2>My Favourite Movie</h2>
+    <div class="movie-list">
+      <div class="movie-card fade delay5">
+        <img src="SL.jfif" alt="SL">
+        <div class="movie-content">
+          <h3>Sekawan Limo</h3>
+          <p>
+            Sekawan Limo is about five university students who go hiking 
+            on Mount Madyopuro and experience strange events.
+          </p>
+        </div>
+      </div>
+      <div class="movie-card fade delay6">
+        <img src="BFG.jfif" alt="BFG">
+        <div class="movie-content">
+          <h3>The Bfg</h3>
+          <p>
+            The BFG follows a young orphan girl named Sophie who befriends 
+            a kind giant who collects dreams for children.
+          </p>
+        </div>
+      </div>
+      <div class="movie-card fade delay7">
+        <img src="Parasite.jfif" alt="Parasite">
+        <div class="movie-content">
+          <h3>Parasite</h3>
+          <p>
+            Parasite is about a poor family who get involved in the lives 
+            of a rich family by pretending to be skilled workers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY FAVOURITE SONGS -->
+  <div class="fav-box fade delay5">
+    <h2>My Favourite Songs</h2>
+
+    <div class="song fade delay6">
+      <b>Crush ft. USHER – Yuna</b>
+      <audio controls>
+        <source src="song1.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="song fade delay7">
+      <b>Selingkar Kasih – Rem</b>
+      <audio controls>
+        <source src="song2.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="song fade delay1">
+      <b>Manisnya Cinta – 6ixth Sense</b>
+      <audio controls>
+        <source src="song3.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <!-- MY HOBBIES -->
+  <div class="fav-box fade delay6">
+    <h2>My Hobbies</h2>
+
+    <div class="song fade delay7">
+      <b>📖 Reading</b>
+      <p>
+        I enjoy reading novels and informative articles during my free time.
+        Reading helps me relax, improve my vocabulary, and gain new knowledge.
+        <br><br>
+        Currently Reading: Semesta Terakhir Untuk Kita written by Ainulfarihah
+      </p>
+    </div>
+
+    <div class="song fade delay1">
+      <b>🎧 Listening to Music</b>
+      <p>
+        Listening to music is my favourite way to release stress.
+        Music keeps me calm, motivated, and inspired throughout the day.
+        <br><br>
+        Currently Playing: Sampai Mati by Hazama
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Siti Zahrina Binti Zaininizar — All rights reserved
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock(){
+  const now = new Date();
+  document.getElementById("clock").textContent =
+    now.toLocaleTimeString('en-GB');
+  document.getElementById("date").textContent =
+    now.toLocaleDateString('en-US',{
+      weekday:'long',
+      year:'numeric',
+      month:'long',
+      day:'numeric'
+    });
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>

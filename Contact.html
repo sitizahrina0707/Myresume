@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - Zahrina's Website</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    :root{
+      --accent:#ffffff;
+      --cta-bg:transparent;
+      --cta-border:rgba(255,255,255,0.9);
+      --text-soft:rgba(255,255,255,0.9);
+      --overlay: rgba(0, 0, 0, 0.45);
+    }
+
+    *{box-sizing:border-box;}
+    html, body {
+      margin:0;
+      padding:0;
+      height:100vh;
+      overflow:hidden;
+      font-family:Poppins,sans-serif;
+      color:white;
+      background:url("Purple.gif") center/cover fixed;
+      position: relative;
+      z-index: 0;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: var(--overlay);
+      z-index:0;
+    }
+
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(18px);}
+      100%{opacity:1;transform:translateY(0);}
+    }
+    .fade{opacity:0;animation:fadeUp 1.2s ease-out forwards;}
+    .delay1{animation-delay:0.2s;}
+    .delay2{animation-delay:0.4s;}
+    .delay3{animation-delay:0.6s;}
+
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      background: rgba(128, 0, 128, 0.85);
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-weight:700;
+      letter-spacing:2px;
+      color:white;
+    }
+
+    nav a{
+      color:white;
+      margin-left:15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    nav a:hover{color:rgba(255,255,255,0.8);}
+
+    .section{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: auto;
+      max-height: 90%;
+      text-align:center;
+      z-index:1;
+      padding:20px;
+      overflow: hidden;
+    }
+
+    h1{
+      font-family:"Playfair Display", serif;
+      font-size:48px;
+      margin-bottom:20px;
+      text-transform:uppercase;
+    }
+
+    p{
+      font-size:16px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      margin-bottom:20px;
+    }
+
+ 
+    .contact-box{
+      background:rgba(255,255,255,0.06);
+      border-radius:14px;
+      padding:18px 20px;
+      margin:20px auto;
+      backdrop-filter:blur(4px);
+      text-align:left;
+      line-height:1.6;
+      font-size:14px;
+      max-width:520px; /* lebar lebih kecil */
+      width:100%;
+    }
+
+    .contact-item b{color:white;}
+
+    .socials{
+      margin-top:15px;
+    }
+
+    .socials div{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .socials a{
+      color:var(--text-soft);
+      text-decoration:none;
+      transition:0.25s;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .socials a:hover{
+      color:white;
+    }
+
+    .socials a i{
+      font-size:24px;
+    }
+
+    footer{
+      padding:30px 0;
+      text-align:center;
+      color:white;
+      font-size:14px;
+      font-family:'Poppins', sans-serif;
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      z-index:2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar fade delay1">
+    <div class="logo">ZAHRINA'S WEBSITE</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Education.html">Education</a>
+      <a href="Family.html">Family</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <section class="section">
+    <h1 class="fade delay1">Contact Me</h1>
+
+    <p class="fade delay2">
+      If you have any questions, collaboration ideas, or would like to get in touch,  
+      feel free to contact me through the details below.
+    </p>
+
+    <div class="contact-box fade delay3">
+      <div class="contact-item"><b>Email:</b> sitizahrina0707@gmail.com </div>
+      <div class="contact-item"><b>Phone:</b> 017-7568707</div>
+      <div class="contact-item"><b>Location:</b> Johor, Malaysia</div>
+
+      <div class="socials">
+        <b>Social Media:</b>
+        <div>
+          <a href="https://www.instagram.com/s._zahrina?igsh=MTh0dXN1eGpmdWhqOQ==" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram: @s._zahrina
+          </a>
+          <a href="https://www.tiktok.com/@smallestzah2?_r=1&_t=ZS-92IZ3QN5irw" target="_blank">
+            <i class="fab fa-tiktok"></i> TikTok: @smallestzah2
+          </a>
+          <a href="https://www.facebook.com/share/1ZeLquNw6k/" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook: Siti Zahrina
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Siti Zahrina Binti Zaininizar — All rights reserved
+  </footer>
+
+</body>
+</html>

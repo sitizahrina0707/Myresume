@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Family - Zahrina's Website</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      background:url("Blue.jfif") center/cover fixed;
+      color:white;
+      padding-top:80px;
+    }
+
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(18px);}
+      100%{opacity:1;transform:translateY(0);}
+    }
+
+    .fade{opacity:0;animation:fadeUp 1.2s ease-out forwards;}
+    .delay1{animation-delay:0.2s;}
+    .delay3{animation-delay:0.6s;}
+
+    /* NAVIGATION */
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      background:rgba(0,102,204,0.85);
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+    }
+
+    .logo{
+      font-family:"Playfair Display",serif;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
+    nav a{
+      color:white;
+      margin-left:15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* HEADER */
+    .family-header{
+      width:100%;
+      padding:45px 20px;
+      background:linear-gradient(to bottom right, rgba(0,0,0,0.55), rgba(0,102,204,0.6));
+      backdrop-filter:blur(6px);
+      text-align:center;
+      margin-top:-17px;
+    }
+
+    .family-header h1{
+      font-family:"Playfair Display", serif;
+      font-size:70px;
+      letter-spacing:3px;
+      margin:0 0 10px;
+    }
+
+    .family-tagline{
+      font-style:italic;
+      font-size:18px;
+      color:rgba(255,255,255,0.9);
+      margin-bottom:10px;
+    }
+
+    .family-clock{
+      font-size:18px;
+    }
+
+    .section{
+      padding:20px 48px 100px;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .family-intro{
+      max-width:700px;
+      margin:20px auto 60px;
+      font-size:17px;
+      line-height:1.9;
+      color:black;
+    }
+
+    /* FAMILY BOX */
+    .family-boxes{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:20px;
+    }
+
+    .family-box{
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(8px);
+      border-radius:18px;
+      padding:0;
+      box-shadow:0 8px 25px rgba(0,0,0,0.25);
+      transition:transform 0.3s ease;
+    }
+
+    .family-box:hover{
+      transform:translateY(-10px);
+    }
+
+    .family-box img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:14px;
+      margin-bottom:12px;
+    }
+
+    .family-box h3{
+      font-size:16px;
+      margin:12px 0 4px;
+      color:#050a30;
+    }
+
+    .family-box .role{
+      font-size:13px;
+      font-style:italic;
+      color:#055c9d;
+      margin-bottom:10px;
+    }
+
+    .family-box p{
+      font-size:13px;
+      line-height:1.6;
+      color:#746c70;
+      padding:0 12px 15px;
+    }
+
+    /* QUOTE BOX */
+    .family-quote{
+      margin:60px auto;
+      max-width:1000px;       
+      background:#0066cc;     
+      border-radius:20px;
+      padding:15px;           
+      font-style:italic;
+      font-size:18px;
+      color:white;            
+      box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    }
+
+     .family-activities-section{
+      margin:60px auto;
+      max-width:1000px;       
+      background:#0066cc;     
+      border-radius:20px;
+      padding:30px;           
+      font-size:18px;
+      color:white;            
+      box-shadow:0 6px 20px rgba(0,0,0,0.25);
+      text-align: left; 
+}
+
+.family-activities-section h2 {
+  padding-left: 10px;  
+  margin-bottom: 15px;   
+  font-size: 24px;       
+  font-family: 'Playfair Display', serif;
+  margin-top:-5px;
+}
+
+.activities-list {
+  padding-left: 30px;    
+  margin: 0;
+  line-height: 1.8;      
+  font-size: 16px;
+}
+
+    /* GALLERY */
+    .gallery-title{
+      font-family:"Playfair Display", serif;
+      font-size:32px;
+      margin-bottom:20px;
+      color:white;
+      text-align:left;
+    }
+
+    .family-gallery-wrapper{
+      overflow:hidden;
+      width:100%;
+    }
+
+    .family-gallery{
+      display:flex;
+      gap:20px;
+    }
+
+    .family-gallery img{
+      flex:0 0 auto;
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:16px;
+      transition:transform 0.3s ease;
+    }
+
+    .family-gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    @media(max-width:1024px){
+      .family-boxes{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(max-width:600px){
+      .family-boxes,.family-gallery{grid-template-columns:1fr;}
+    }
+
+    footer{
+      padding:30px;
+      text-align:center;
+      color:black;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="topbar fade delay1">
+  <div class="logo">ZAHRINA'S WEBSITE</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About Me.html">About Me</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+</div>
+
+<div class="family-header fade delay1">
+  <h1>My Family</h1>
+  <div class="family-tagline">“Family is where life begins and love never ends.”</div>
+  <div class="family-clock" id="clock"></div>
+</div>
+
+<section class="section">
+
+  <div class="family-intro fade delay3">
+    I come from a warm and loving family that has always been my source of strength and motivation.
+    Every member plays an important role in shaping who I am today.
+  </div>
+
+  <div class="family-boxes fade delay3">
+    <div class="family-box">
+      <img src="father.jpg">
+      <h3>Zaininizar Bin Md Yusof</h3>
+      <div class="role">Father</div>
+      <p>A responsible and loving father.</p>
+    </div>
+
+    <div class="family-box">
+      <img src="mother.jpg">
+      <h3>Zuraidah Binti Ahmad Sulaiman</h3>
+      <div class="role">Mother</div>
+      <p>A caring mother who fills the home with warmth.</p>
+    </div>
+
+    <div class="family-box">
+      <img src="sister.jpg">
+      <h3>Siti Zulaikha</h3>
+      <div class="role">Sister</div>
+      <p>Strong and hardworking.</p>
+    </div>
+
+    <div class="family-box">
+      <img src="sister1.jpg">
+      <h3>Siti Zahrina</h3>
+      <div class="role">Me</div>
+      <p>Always supportive.</p>
+    </div>
+
+    <div class="family-box">
+      <img src="sister2.jpg">
+      <h3>Siti Zahirah</h3>
+      <div class="role">Younger Sister</div>
+      <p>The joy of the family.</p>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="family-quote fade delay3">
+    <p>"It doesn't matter how big our house is, 
+	the important thing is that there is love in it."</p>
+    <span>— Peter Buffett </span>
+  </div>
+
+<!-- FAMILY ACTIVITIES -->
+<div class="family-activities-section">
+  <h2>Family Activities</h2>
+  <ul class="activities-list">
+    <li>Family Picnic</li>
+    <li>Cooking Together</li>
+    <li>Board Games Night</li>
+    <li>Movie Night</li>
+    <li>Weekend Hiking</li>
+  </ul>
+</div>
+
+
+  <!-- GALLERY -->
+  <div class="family-gallery-section fade delay3">
+    <h2 class="gallery-title">Family Gallery</h2>
+    <div class="family-gallery-wrapper" id="galleryWrapper">
+      <div class="family-gallery" id="familyGallery">
+        <img src="family1.jpg">
+        <img src="family2.jpg">
+        <img src="family3.jpg">
+        <img src="family4.jpg">
+        <img src="family5.jpg">
+        <!-- Duplicate images untuk continuous loop -->
+        <img src="family1.jpg">
+        <img src="family2.jpg">
+        <img src="family3.jpg">
+        <img src="family4.jpg">
+        <img src="family5.jpg">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function updateClock(){
+    const now=new Date();
+    document.getElementById("clock").innerHTML=
+      now.toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'})
+      +" | "+now.toLocaleTimeString('en-GB');
+  }
+  setInterval(updateClock,1000);updateClock();
+
+  // Continuous auto slide gallery
+  const wrapper = document.getElementById("galleryWrapper");
+  const gallery = document.getElementById("familyGallery");
+  let scrollSpeed = 1; // Adjust speed
+
+  function continuousScroll(){
+    wrapper.scrollLeft += scrollSpeed;
+    // When it's half way through (the original picture is finished), reset scrollLeft
+    if(wrapper.scrollLeft >= gallery.scrollWidth / 2){
+      wrapper.scrollLeft = 0;
+    }
+    requestAnimationFrame(continuousScroll);
+  }
+
+  continuousScroll();
+</script>
+
+<footer>
+  © 2025 Siti Zahrina Binti Zaininizar — All rights reserved
+</footer>
+
+</body>
+</html>

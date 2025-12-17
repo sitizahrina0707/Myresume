@@ -1,0 +1,445 @@
+<!doctype html>
+
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Education - Zahrina's Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent:#ffffff;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeUp {0%{opacity:0;transform:translateY(18px);}100%{opacity:1;transform:translateY(0);} }
+.fade{opacity:0;animation:fadeUp 1.2s ease-out forwards;}
+.delay1{animation-delay:0.2s;}
+.delay2{animation-delay:0.4s;}
+.delay3{animation-delay:0.6s;}
+.delay4{animation-delay:0.8s;}
+.delay5{animation-delay:1s;}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Poppins", sans-serif;
+  color:var(--accent);
+  background:url('Green.jpg') center/cover fixed;
+}
+
+.topbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(0, 100, 0, 0.85); 
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+.logo{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color:white;
+}
+nav a{
+  color:white; 
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover{
+  color: rgba(153, 204, 153, 0.8); 
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #222;
+  color: #fff;
+  padding: 10px 0;
+  position: sticky;
+  top: 63px;
+  z-index: 998;
+}
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marqueeAnim 20s linear infinite;
+  font-weight: 600;
+  font-size: 16px;
+}
+@keyframes marqueeAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.hero{
+  min-height:50vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding-top:100px; 
+}
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:1100px;
+  text-align:center;
+  padding:28px;
+  color:white;
+}
+.hero-content h1{
+  font-family:"Playfair Display", serif;
+  font-size:70px;
+  margin:0;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:0 8px 30px rgba(0,0,0,0.6);
+}
+
+.section{
+  padding:120px 20px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.timeline{
+  position:relative;
+  padding-left:20px;
+  border-left:3px solid rgba(255,255,255,0.3);
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:60px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:-15px;
+  top:0;
+  width:30px;
+  height:30px;
+  background:#fff;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,0.8);
+}
+
+.timeline-item.secondary-left::before{
+  left:auto;
+  right:-15px;
+}
+
+.timeline-item .card{
+  background:#006400; 
+  padding:16px 20px;
+  border-radius:16px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.4);
+  transition:all 0.3s ease;
+  flex:1 1 400px;
+  min-width:300px;
+}
+.timeline-item .card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+.timeline-item img{
+  width:100%;
+  max-width:300px;
+  height:auto;
+  border-radius:16px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.timeline-item.right{
+  flex-direction: row;
+}
+.timeline-item.left{
+  flex-direction: row-reverse;
+}
+.timeline-item.secondary-left{
+  flex-direction: row;
+}
+
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:black;
+  font-size:14px;
+  font-family:'Poppins', sans-serif;
+}
+
+@media(max-width:768px){
+  .timeline-item{
+    flex-direction: column !important;
+    align-items:flex-start;
+  }
+  .timeline-item img{
+    width:100%;
+    height:auto;
+  }
+  .timeline{
+    padding-left:10px;
+  }
+  .section{
+    padding:80px 20px;
+  }
+}
+
+.timeline-item{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.timeline-item.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-quote{
+  text-align:center;
+  margin-bottom:80px;
+  padding:30px 20px;
+  background:rgba(0, 100, 0, 0.6);
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  animation: fadeUp 1.2s ease-out forwards;
+  margin-top: -80px;
+}
+.timeline-quote p{
+  font-family:"Playfair Display", serif;
+  font-size:26px;
+  font-style:italic;
+  margin:0 0 10px;
+}
+.timeline-quote span{
+  font-size:14px;
+  opacity:0.85;
+}
+
+
+.bottom-image.static-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  max-width: 700px;
+  margin: 20px auto 40px;
+}
+
+.bottom-image.static-images img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  margin-top: -80px;
+}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hover-text {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(0, 100, 0, 0.85);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-out;
+  white-space: nowrap;
+}
+
+.image-container:hover .hover-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.experience-table {
+  width:100%;
+  max-width:900px;
+  margin:50px auto 0;
+  border-collapse:collapse;
+  font-family:'Poppins', sans-serif;
+  color:white;
+}
+.experience-table th, .experience-table td {
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.3);
+  text-align:left;
+}
+.experience-table th {
+  background: rgba(0,100,0,0.8);
+}
+.experience-table tr:nth-child(even) {
+  background: rgba(0,100,0,0.4);
+}
+.experience-table tr:nth-child(odd) {
+  background: rgba(0,100,0,0.6);
+}
+</style>
+
+</head>
+<body>
+
+<div class="topbar fade delay1">
+  <div class="logo">ZAHRINA'S WEBSITE</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About Me.html">About Me</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+</div>
+
+<div class="marquee fade delay2">
+  <div class="marquee-content">“Welcome to my journey, filled with learning and new experiences.”</div>
+</div>
+
+<section class="hero fade delay3">
+  <div class="hero-content">
+    <h1>My Education Journey</h1>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="timeline-quote">
+    <p>"Whoever does not want to feel the bitterness of learning will feel the 
+        humiliation of ignorance throughout his life."</p>
+    <span>— Imam Syafi'i</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item right">
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:20px;">Elementary School</h3>
+        <p><b>School:</b> SK PARIT LATIFF </p>
+        <p>I started my educational journey at this school from <b>2012 until 2017.</b> 
+        Throughout my schooling here, I gained various experiences, such as 
+        when I was able to experience what it was like to face a big exam 
+        which is UPSR.</p>
+      </div>
+      <div class="image-container">
+        <img src="primary.jpg" alt="Primary School">
+        <div class="hover-text">Elementary School</div>
+      </div>
+    </div>
+
+    <div class="timeline-item secondary-left">
+      <div class="image-container">
+        <img src="secondary.jpg" alt="Secondary School">
+        <div class="hover-text">High-School</div>
+      </div>
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:20px;">High-School</h3>
+        <p><b>School:</b> SMK PEKAN BARU MUAR</p>
+        <p>Then I continued my studies at High-School school starting in <b>2018 until 2022.</b> 
+        Here I had many happy and sad experiences with friends and teachers who gave 
+        me a lot of guidance so that I could sit for the SPM examination successfully.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:20px;">University</h3>
+        <p><b>Course:</b> Diploma in Information Management</p>
+        <p><b>Institution:</b> UiTM SEGAMAT, JOHOR</p>
+        <p>After I finished school, I continued my studies to a higher level, namely at 
+        the university level. Starting from the year I entered university in <b>2023 until now.</b> 
+        Here I met more wonderful people and met good friends.</p>
+      </div>
+      <div class="image-container">
+        <img src="diploma.jpg" alt="Diploma">
+        <div class="hover-text">University</div>
+      </div>
+    </div>
+
+  </div>
+
+  <table class="experience-table">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Experience</th>
+        <th>Location/School</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2021</td>
+        <td>Join the Plastic Tide Turners Challenge</td>
+        <td>SMK PEKAN BARU MUAR</td>
+      </tr>
+      <tr>
+        <td>2025</td>
+        <td>Undergoing industrial training for two months.</td>
+        <td>PERTUBUHAN PELADANG KAWASAN MUAR SELATAN</td>
+      </tr>
+      <tr>
+        <td>2025</td>
+        <td>Outreach Program:Inspirestem</td>
+        <td>SM SAINS SEGAMAT</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+
+<div class="bottom-image static-images">
+  <div class="image-container">
+    <img src="ending.jpg" alt="End of Education Journey">
+    <div class="hover-text">High-school Life</div>
+  </div>
+  <div class="image-container">
+    <img src="friends.jpg" alt="With Friends">
+    <div class="hover-text">University Life</div>
+  </div>
+  <div class="image-container">
+    <img src="trip.jpg" alt="School Trip">
+    <div class="hover-text">Elementary Life</div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Siti Zahrina Binti Zaininizar — All rights reserved
+</footer>
+
+<script>
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  timelineItems.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>

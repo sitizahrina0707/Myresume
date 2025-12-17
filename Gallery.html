@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery - Zahrina's Website</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#ffffff;
+      --text-soft:rgba(255,255,255,0.9);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      background:url("Orange.jfif") center/cover fixed;
+      color:white;
+      padding-top:80px;
+    }
+
+    /* Fade Animation */
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(20px);}
+      100%{opacity:1;transform:translateY(0);}
+    }
+    .fade{opacity:0;animation:fadeUp 1.2s ease-out forwards;}
+    .delay1{animation-delay:0.2s;}
+    .delay2{animation-delay:0.4s;}
+    .delay3{animation-delay:0.6s;}
+
+    /* NAVIGATION */
+    .topbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255, 165, 0, 0.85); 
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .logo{
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    nav a{
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover{
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* MARQUEE */
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      background:#222;
+      color: #fff;
+      padding: 10px 0;
+      position: sticky;
+      top: 63px;
+      z-index: 998;
+      margin-top:-20px;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: marqueeAnim 20s linear infinite;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    @keyframes marqueeAnim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* PAGE SECTION */
+    .section{
+      padding:160px 48px 100px;
+      max-width:1200px;
+      margin:auto;
+    }
+    h1{
+      font-family:"Playfair Display", serif;
+      font-size:70px;
+      margin-bottom:25px;
+      text-align:center;
+      margin-top:-100px;
+    }
+    p{
+      color:var(--text-soft);
+      font-size:17px;
+      line-height:1.7;
+      margin-bottom:30px;
+      text-align:center;
+    }
+
+    /* GALLERY GRID */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:30px;
+      margin-top:30px;
+      justify-items:center;
+    }
+
+    .gallery .card{
+      background:white;
+      color:#555;
+      border-radius:26px;
+      padding:18px;
+      text-align:center;
+      box-shadow:0 20px 40px rgba(0,0,0,0.12);
+      transition:transform .35s ease, box-shadow .35s ease;
+      max-width:320px;
+      width:100%;
+    }
+
+    .gallery .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 30px 55px rgba(0,0,0,0.18);
+    }
+
+    .gallery img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      border-radius:20px;
+    }
+
+    .gallery h3{
+      margin:18px 0 10px;
+      font-size:22px;
+      font-weight:600;
+      color:#ff8c00;
+    }
+
+    .gallery .desc{
+      font-size:15px;
+      color:#777;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .gallery a{
+      display:inline-block;
+      padding:12px 30px;
+      background:linear-gradient(135deg,#ffb347,#ff7a18);
+      color:white;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .gallery a:hover{
+      opacity:0.85;
+    }
+
+    .gallery .card:nth-child(4){
+      grid-column:1 / span 3;
+      max-width:1075px;
+    }
+
+    @media (max-width:900px){
+      .gallery{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .gallery .card:nth-child(4){
+        grid-column:1 / span 2;
+      }
+    }
+
+    @media (max-width:600px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+      .gallery .card:nth-child(4){
+        grid-column:1 / span 1;
+        max-width:100%;
+      }
+    }
+
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:black;
+  font-size:14px;
+  font-family:'Poppins', sans-serif;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar fade delay1">
+    <div class="logo">ZAHRINA'S WEBSITE</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Education.html">Education</a>
+      <a href="Family.html">Family</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee fade delay2">
+    <div class="marquee-content">“Here are some memories and moments captured in my gallery.”</div>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="section fade delay3">
+    <h1>My Gallery</h1>
+    <p>Here are some photos that represent my journey, memories, and moments that are special to me.</p>
+
+    <div class="gallery fade delay3">
+
+      <div class="card">
+        <img src="nature.jpg" alt="Nature">
+        <h3>Nature</h3>
+        <p class="desc">Capture your best moments and expressions in our selfie collection.</p>
+        <a href="nature.html">View Gallery</a> 
+      </div>
+
+      <div class="card">
+        <img src="family5.jpg" alt="Family">
+        <h3>Family</h3>
+        <p class="desc">Cherish the precious moments spent with your loved ones.</p>
+        <a href="familyy.html">View Gallery</a> 
+      </div>
+
+      <div class="card">
+        <img src="friends.jpg" alt="Friends">
+        <h3>Friends</h3>
+        <p class="desc">Relive the fun and laughter shared with your friends.</p>
+        <a href="friends.html">View Gallery</a> 
+      </div>
+
+      <div class="card">
+        <img src="New Highlight.jpg" alt="New Highlight">
+        <h3>New Highlight</h3>
+        <p class="desc">Experience the joy and excitement of new thing moments.</p>
+        <a href="new highlight.html">View Gallery</a> 
+      </div>
+
+    </div>
+  </section>
+
+<footer>
+  © 2025 Siti Zahrina Binti Zaininizar — All rights reserved
+</footer>
+
+</body>
+</html>
