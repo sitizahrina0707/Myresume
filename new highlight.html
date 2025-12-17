@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery - Zahrina's Website</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#ffffff;
+      --text-soft:rgba(255,255,255,0.9);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Poppins,sans-serif;
+      background:url("Orange.jfif") center/cover fixed;
+      color:white;
+      padding-top:80px;
+    }
+
+    /* Fade Animation */
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(20px);}
+      100%{opacity:1;transform:translateY(0);}
+    }
+    .fade{opacity:0;animation:fadeUp 1.2s ease-out forwards;}
+    .delay1{animation-delay:0.2s;}
+    .delay2{animation-delay:0.4s;}
+    .delay3{animation-delay:0.6s;}
+
+    /* NAVIGATION */
+    .topbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255, 165, 0, 0.85); 
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .logo{
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    nav a{
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover{
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* PAGE SECTION */
+    .section{
+      padding:160px 48px 100px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+   h1{
+      font-family:"Playfair Display", serif;
+      font-size:70px;
+      margin-bottom:25px;
+      text-align:center;
+      margin-top:-100px;
+    }
+    p{
+      color:var(--text-soft);
+      font-size:17px;
+      line-height:1.7;
+      margin-bottom:30px;
+      text-align:center;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:15px;
+      margin-top:30px;
+      justify-items:center;
+    }
+
+    .gallery img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      border-radius:12px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover{
+      transform: scale(1.05);
+    }
+
+    @media (max-width:900px){
+      .gallery{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:600px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar fade delay1">
+    <div class="logo">ZAHRINA'S WEBSITE</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Education.html">Education</a>
+      <a href="Family.html">Family</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="section fade delay2">
+    <h1>My Gallery</h1>
+    <p>Here are some photos that represent my journey, memories, and moments that are special to me.</p>
+
+    <div class="gallery fade delay3">
+      <img src="M1.jpg" alt="M1">
+      <img src="M2.jpg" alt="M2">
+      <img src="M3.jpg" alt="M3">
+      <img src="M4.jpg" alt="M4">
+      <img src="M5.jpg" alt="M5">
+    </div>
+  </section>
+
+</body>
+</html>
